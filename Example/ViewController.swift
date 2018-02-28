@@ -9,7 +9,7 @@
 import UIKit
 import TinderCard
 
-class ViewController: UIViewController, TinderCardViewDataSource {
+class ViewController: UIViewController, TinderCardViewDataSource, TinderCardViewDelegate {
     
     @IBOutlet weak var tinderCardView: TinderCardView!
     
@@ -23,6 +23,7 @@ class ViewController: UIViewController, TinderCardViewDataSource {
             sampleCards[i].backgroundColor = colors[i]
         }
         tinderCardView.dataSource = self
+        tinderCardView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,12 +31,25 @@ class ViewController: UIViewController, TinderCardViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: TinderCardViewDataSource
     func numberOfCards(_ tinderCard: TinderCardView) -> Int {
         return 2
     }
 
     func tinderCard(_ tinderCard: TinderCardView, viewForCardAt index: Int) -> UIView {
         return sampleCards[index]
+    }
+    
+    // MARK: TinderCardViewDelegate
+    func tinderCard(_ tinderCard: TinderCardView, didSwipeCardAt: Int, in direction: SwipeDirection) {
+        switch direction {
+        case .left:
+            print("left")
+        case .right:
+            print("right")
+        default:
+            print("yet run out")
+        }
     }
 }
 
