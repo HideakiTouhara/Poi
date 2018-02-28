@@ -31,7 +31,7 @@ Set swipeable card number
 func numberOfCards(_ tinderCard: TinderCardView) -> Int
 ```
 
-Set weipeable card
+Set swipeable card
 
 ```
 func tinderCard(_ tinderCard: TinderCardView, viewForCardAt index: Int) -> UIView
@@ -103,6 +103,4 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
         print("last")
     }
 }
-
-
 ```
