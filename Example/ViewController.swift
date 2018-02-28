@@ -51,5 +51,9 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
             print("yet run out")
         }
     }
+    
+    func tinderCard(_ tinderCard: TinderCardView, runOutOfCardAt: Int, in direction: SwipeDirection) {
+        print("last")
+    }
 }
 
