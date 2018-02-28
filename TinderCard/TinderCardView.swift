@@ -15,6 +15,7 @@ public protocol TinderCardViewDataSource: class {
 
 public protocol TinderCardViewDelegate: class {
     func tinderCard(_ tinderCard: TinderCardView, didSwipeCardAt: Int, in direction: SwipeDirection)
+    func tinderCard(_ tinderCard: TinderCardView, runOutOfCardAt: Int, in direction: SwipeDirection)
 }
 
 public class TinderCardView: UIView {
@@ -51,7 +52,7 @@ public class TinderCardView: UIView {
             self.addSubview(contentViews[i])
         }
         basicView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
-        basicView.backgroundColor = UIColor.blue
+        basicView.backgroundColor = UIColor.clear
         self.addSubview(basicView)
         cardCriteria = basicView.center
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
@@ -90,6 +91,9 @@ public class TinderCardView: UIView {
                 card.center = cardCriteria
                 card.transform = CGAffineTransform.identity
                 delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .left)
+                if currentCount == contentViews.count {
+                    delegate?.tinderCard(self, runOutOfCardAt: currentCount, in: .left)
+                }
                 return
             } else if card.center.x > (view.frame.width - 75) {
                 UIView.animate(withDuration: 0.4, animations: {
@@ -99,6 +103,9 @@ public class TinderCardView: UIView {
                 card.center = cardCriteria
                 card.transform = CGAffineTransform.identity
                 delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .right)
+                if currentCount == contentViews.count {
+                    delegate?.tinderCard(self, runOutOfCardAt: currentCount, in: .right)
+                }
                 return
             }
             UIView.animate(withDuration: 0.4, animations: {
