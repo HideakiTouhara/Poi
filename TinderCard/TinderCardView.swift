@@ -39,17 +39,12 @@ public class TinderCardView: UIView {
             contentViews.append(createCard(index: i))
         }
         for i in (0..<countOfCards).reversed() {
+            contentViews[i].frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
             self.addSubview(contentViews[i])
-            contentViews[i].center = basicView.center
         }
         basicView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
         basicView.backgroundColor = UIColor.blue
         self.addSubview(basicView)
-        basicView.center = CGPoint(x: 0, y: 0)
-        for i in (0..<countOfCards).reversed() {
-//            contentViews[i].center = basicView.center
-//            contentViews[i].frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-        }
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
         basicView.addGestureRecognizer(panGesture)
     }
@@ -62,10 +57,6 @@ public class TinderCardView: UIView {
     }
     
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {
-        print("basicView\(basicView.center)")
-        print("self\(self.center)")
-        print("1: \(contentViews[0].center)")
-        print("2: \(contentViews[1].center)")
         let card = sender.view!
         let view = (UIApplication.shared.keyWindow?.rootViewController?.view)!
         let location = sender.translation(in: view)
