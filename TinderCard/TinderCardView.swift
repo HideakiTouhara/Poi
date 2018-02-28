@@ -13,6 +13,10 @@ public protocol TinderCardViewDataSource: class {
     func tinderCard(_ tinderCard: TinderCardView, viewForCardAt index: Int) -> UIView
 }
 
+public protocol TinderCardViewDelegate: class {
+    func tinderCard(_ tinderCard: TinderCardView, didSwipeCardAt: Int, in direction: SwipeDirection)
+}
+
 public class TinderCardView: UIView {
     
     var contentViews = [UIView]()
@@ -33,6 +37,9 @@ public class TinderCardView: UIView {
             setUp()
         }
     }
+    
+    public weak var delegate: TinderCardViewDelegate?
+    
     private func setUp() {
         self.backgroundColor = UIColor.clear
         let countOfCards = dataSource?.numberOfCards(self) ?? 0
@@ -70,7 +77,7 @@ public class TinderCardView: UIView {
         contentViews[currentCount].center = CGPoint(x: card.center.x + location.x, y: card.center.y + location.y)
         card.center = CGPoint(x: card.center.x + location.x, y: card.center.y + location.y)
         
-        let xFromCenter = card.center.x - view.center.x
+//        let xFromCenter = card.center.x - view.center.x
         if sender.state == UIGestureRecognizerState.ended {
             if card.center.x < 75 {
                 UIView.animate(withDuration: 0.4, animations: {
@@ -79,6 +86,7 @@ public class TinderCardView: UIView {
                 currentCount += 1
                 card.center = cardCriteria
                 card.transform = CGAffineTransform.identity
+                delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .left)
                 return
             } else if card.center.x > (view.frame.width - 75) {
                 UIView.animate(withDuration: 0.4, animations: {
@@ -87,6 +95,7 @@ public class TinderCardView: UIView {
                 currentCount += 1
                 card.center = cardCriteria
                 card.transform = CGAffineTransform.identity
+                delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .right)
                 return
             }
             UIView.animate(withDuration: 0.4, animations: {
@@ -95,6 +104,7 @@ public class TinderCardView: UIView {
                 self.contentViews[self.currentCount].center = self.cardCriteria
                 self.contentViews[self.currentCount].transform = CGAffineTransform.identity
             })
+            delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .yetRunOut)
         }
     }
 }
