@@ -17,9 +17,10 @@ class ViewController: UIViewController, TinderCardViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var colors = [UIColor.red, UIColor.orange]
         for i in (0..<2) {
-            sampleCards.append(UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100)))
-            sampleCards[i].backgroundColor = UIColor.red
+            sampleCards.append(UIView(frame: CGRect(x: 0, y: 0, width: 240, height: 128)))
+            sampleCards[i].backgroundColor = colors[i]
         }
         tinderCardView.dataSource = self
     }
