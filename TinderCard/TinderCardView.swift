@@ -77,7 +77,10 @@ public class TinderCardView: UIView {
         contentViews[currentCount].center = CGPoint(x: card.center.x + location.x, y: card.center.y + location.y)
         card.center = CGPoint(x: card.center.x + location.x, y: card.center.y + location.y)
         
-//        let xFromCenter = card.center.x - view.center.x
+        let xFromCenter = card.center.x - cardCriteria.x
+        contentViews[currentCount].transform = CGAffineTransform(rotationAngle: 0.5 * (xFromCenter / (self.frame.width / 2)))
+        card.transform = CGAffineTransform(rotationAngle: 0.5 * (xFromCenter / (self.frame.width / 2)))
+
         if sender.state == UIGestureRecognizerState.ended {
             if card.center.x < 75 {
                 UIView.animate(withDuration: 0.4, animations: {
