@@ -104,3 +104,10 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
     }
 }
 ```
+## Contribution
+Please create issues or submit pull requests for anything.
+
+## License
+TinderCard is released under the MIT license.
+
+© 2018 GitHub, Inc.
