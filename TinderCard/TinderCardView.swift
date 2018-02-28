@@ -107,7 +107,7 @@ public class TinderCardView: UIView {
                 self.contentViews[self.currentCount].center = self.cardCriteria
                 self.contentViews[self.currentCount].transform = CGAffineTransform.identity
             })
-            delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .yetRunOut)
+            delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .backCenter)
         }
     }
 }

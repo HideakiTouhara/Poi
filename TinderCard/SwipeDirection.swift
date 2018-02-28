@@ -11,5 +11,5 @@ import Foundation
 public enum SwipeDirection: String {
     case left
     case right
-    case yetRunOut
+    case backCenter
 }
