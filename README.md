@@ -1,6 +1,8 @@
 # TinderCard
 You can use tinder UI like tableview method
 
+[![https://gyazo.com/6ceb654c12fd68fe7caf1fa7bf7dd9ed](https://i.gyazo.com/6ceb654c12fd68fe7caf1fa7bf7dd9ed.gif)](https://gyazo.com/6ceb654c12fd68fe7caf1fa7bf7dd9ed)
+
 ## Instalation
 Cocoa Pods
 Please write the below code in Podfile
