@@ -11,21 +11,32 @@ Please write the below code in Podfile
 pod ‘TinderCard’, :git => 'https://github.com/HideakiTouhara/TinderCard.git’
 ```
 
-Carthage can too
+Carthage can do too
 
 ## Usage
 Create TinderCardView in storyboard or swift file
 
 ```
+import TinderCard
+
 @IBOutlet weak var tinderCardView: TinderCardView!
 ```
 
+Conform to TinderCardViewDataSource and TinderCardViewDelegate
+
+```
+class ViewController: UIViewController, TinderCardViewDataSource, TinderCardViewDelegate {
+```
+
 Designate delegate target
+Please put this code after setting card contents
 
 ```
 tinderCardView.dataSource = self
 tinderCardView.delegate = self
 ```
+
+### TinderCardViewDataSource method
 
 Set swipeable card number
 
@@ -39,13 +50,15 @@ Set swipeable card
 func tinderCard(_ tinderCard: TinderCardView, viewForCardAt index: Int) -> UIView
 ```
 
-When did swipe, this method called
+### TinderCardViewDelegate method
+
+When did swipe, this method is called
 
 ```
 func tinderCard(_ tinderCard: TinderCardView, didSwipeCardAt: Int, in direction: SwipeDirection)
 ```
 
-When last card was swiped, this method called
+When last card was swiped, this method is called
 
 ```
 func tinderCard(_ tinderCard: TinderCardView, runOutOfCardAt: Int, in direction: SwipeDirection)
