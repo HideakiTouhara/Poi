@@ -1,7 +1,7 @@
 # TinderCard
 You can use tinder UI like tableview method
 
-[![https://gyazo.com/b60e66fcef307c1d319e9c010cc0c005](https://i.gyazo.com/b60e66fcef307c1d319e9c010cc0c005.gif)](https://gyazo.com/b60e66fcef307c1d319e9c010cc0c005)
+![demo](https://github.com/HideakiTouhara/TinderCard/blob/resources/Resources/demo.gif)
 
 ## Installation
 ### Manual Installation
