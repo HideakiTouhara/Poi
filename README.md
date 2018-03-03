@@ -4,7 +4,24 @@ You can use tinder UI like tableview method
 [![https://gyazo.com/6ceb654c12fd68fe7caf1fa7bf7dd9ed](https://i.gyazo.com/6ceb654c12fd68fe7caf1fa7bf7dd9ed.gif)](https://gyazo.com/6ceb654c12fd68fe7caf1fa7bf7dd9ed)
 
 ## Instalation
-Cocoa Pods
+### Import directly
+1. you use this command
+
+```
+git clone git@github.com:HideakiTouhara/TinderCard.git
+```
+
+2. Import TinderCard.xcodeproj to your project
+
+![screenshot1](https://github.com/HideakiTouhara/TinderCard/blob/resources/Resources/screenshot1.jpg)
+
+3. Add TinderCard.frameworkiOS to Embedded Binaries
+
+![screenshot2](https://github.com/HideakiTouhara/TinderCard/blob/resources/Resources/screenshot2.jpg)
+
+
+
+### Cocoa Pods
 Please write the below code in Podfile
 
 ```
