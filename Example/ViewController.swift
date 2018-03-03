@@ -40,6 +40,15 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
         return sampleCards[index]
     }
     
+    func tinderCard(_ tinderCard: TinderCardView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
+        switch direction {
+        case .right:
+            return UIImageView(image: #imageLiteral(resourceName: "good"))
+        case .left:
+            return UIImageView(image: #imageLiteral(resourceName: "bad"))
+        }
+    }
+    
     // MARK: TinderCardViewDelegate
     func tinderCard(_ tinderCard: TinderCardView, didSwipeCardAt: Int, in direction: SwipeDirection) {
         switch direction {
@@ -47,8 +56,6 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
             print("left")
         case .right:
             print("right")
-        default:
-            print("yet run out")
         }
     }
     
