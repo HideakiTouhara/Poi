@@ -1,10 +1,10 @@
 # TinderCard
 You can use tinder UI like tableview method
 
-[![https://gyazo.com/6ceb654c12fd68fe7caf1fa7bf7dd9ed](https://i.gyazo.com/6ceb654c12fd68fe7caf1fa7bf7dd9ed.gif)](https://gyazo.com/6ceb654c12fd68fe7caf1fa7bf7dd9ed)
+[![https://gyazo.com/b60e66fcef307c1d319e9c010cc0c005](https://i.gyazo.com/b60e66fcef307c1d319e9c010cc0c005.gif)](https://gyazo.com/b60e66fcef307c1d319e9c010cc0c005)
 
-## Instalation
-### Import directly
+## Installation
+### Manual Installation
 1. you use this command
 
 ```
@@ -28,7 +28,7 @@ Please write the below code in Podfile
 pod ‘TinderCard’, :git => 'https://github.com/HideakiTouhara/TinderCard.git’
 ```
 
-Carthage can do too
+Carthage also can do.
 
 ## Usage
 Create TinderCardView in storyboard or swift file
@@ -37,6 +37,16 @@ Create TinderCardView in storyboard or swift file
 import TinderCard
 
 @IBOutlet weak var tinderCardView: TinderCardView!
+// You should change tinderCardView's class to TinderCardView in Attributes inspector.
+```
+
+or
+
+```
+import TinderCard
+
+ let tinderCardView = TinderCardView()
+ self.view.addSubView(tinderCardView)
 ```
 
 Conform to TinderCardViewDataSource and TinderCardViewDelegate
@@ -65,6 +75,19 @@ Set swipeable card
 
 ```
 func tinderCard(_ tinderCard: TinderCardView, viewForCardAt index: Int) -> UIView
+```
+
+Set overlay image if right or left swiped
+
+```
+func tinderCard(_ tinderCard: TinderCardView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
+    switch direction {
+    case .right:
+        return UIImageView(image: #imageLiteral(resourceName: "good"))
+    case .left:
+        return UIImageView(image: #imageLiteral(resourceName: "bad"))
+    }
+}
 ```
 
 ### TinderCardViewDelegate method
@@ -119,6 +142,15 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
         return sampleCards[index]
     }
 
+    func tinderCard(_ tinderCard: TinderCardView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
+        switch direction {
+        case .right:
+            return UIImageView(image: #imageLiteral(resourceName: "good"))
+        case .left:
+            return UIImageView(image: #imageLiteral(resourceName: "bad"))
+        }
+    }
+
     // MARK: TinderCardViewDelegate
     func tinderCard(_ tinderCard: TinderCardView, didSwipeCardAt: Int, in direction: SwipeDirection) {
         switch direction {
@@ -126,8 +158,6 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
             print("left")
         case .right:
             print("right")
-        default:
-            print("yet run out")
         }
     }
 
