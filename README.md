@@ -55,8 +55,9 @@ Conform to TinderCardViewDataSource and TinderCardViewDelegate
 class ViewController: UIViewController, TinderCardViewDataSource, TinderCardViewDelegate {
 ```
 
-Designate delegate target
-Please put this code after setting card contents
+Designate delegate target.
+
+Please put this code after setting card contents.
 
 ```
 tinderCardView.dataSource = self
