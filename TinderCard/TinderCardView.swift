@@ -62,6 +62,17 @@ public class TinderCardView: UIView {
         swipe(at: direction, by: 600)
     }
     
+    public func undo() {
+        if currentCount == 0 {
+            return
+        }
+        currentCount -= 1
+        UIView.animate(withDuration: 0.4, animations: {
+            self.contentViews[self.currentCount].center = self.cardCriteria
+            self.contentViews[self.currentCount].transform = CGAffineTransform.identity
+        })
+    }
+    
     private func setUp() {
         self.backgroundColor = UIColor.clear
         let countOfCards = dataSource?.numberOfCards(self) ?? 0
