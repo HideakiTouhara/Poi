@@ -50,6 +50,18 @@ public class TinderCardView: UIView {
     
     public weak var delegate: TinderCardViewDelegate?
     
+    public func swipeCurrentCard(to direction: SwipeDirection) {
+        
+        if(currentCount >= contentViews.count) {
+            return
+        }
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.contentViews[self.currentCount].transform = CGAffineTransform(rotationAngle: -0.5 * (self.frame.width / 2))
+        })
+        swipe(at: direction, by: 600)
+    }
+    
     private func setUp() {
         self.backgroundColor = UIColor.clear
         let countOfCards = dataSource?.numberOfCards(self) ?? 0
@@ -155,6 +167,35 @@ public class TinderCardView: UIView {
                 self.contentViews[self.currentCount].center = self.cardCriteria
                 self.contentViews[self.currentCount].transform = CGAffineTransform.identity
             })
+            resetImageAlpha()
+        }
+    }
+    
+    private func swipe(at direction: SwipeDirection, by distance: CGFloat) {
+        switch direction {
+        case .left:
+            UIView.animate(withDuration: 0.4, animations: {
+                self.contentViews[self.currentCount].center = CGPoint(x: self.contentViews[self.currentCount].center.x - distance, y: self.contentViews[self.currentCount].center.y)
+            })
+            currentCount += 1
+            basicView.center = cardCriteria
+            basicView.transform = CGAffineTransform.identity
+            delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .left)
+            if currentCount == contentViews.count {
+                delegate?.tinderCard(self, runOutOfCardAt: currentCount, in: .left)
+            }
+            resetImageAlpha()
+        case .right:
+            UIView.animate(withDuration: 0.4, animations: {
+                self.contentViews[self.currentCount].center = CGPoint(x: self.contentViews[self.currentCount].center.x + distance, y: self.contentViews[self.currentCount].center.y)
+            })
+            currentCount += 1
+            basicView.center = cardCriteria
+            basicView.transform = CGAffineTransform.identity
+            delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .right)
+            if currentCount == contentViews.count {
+                delegate?.tinderCard(self, runOutOfCardAt: currentCount, in: .right)
+            }
             resetImageAlpha()
         }
     }
