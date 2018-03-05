@@ -62,5 +62,11 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
     func tinderCard(_ tinderCard: TinderCardView, runOutOfCardAt: Int, in direction: SwipeDirection) {
         print("last")
     }
+    
+    // MARK: IBAction
+    @IBAction func OKAction(_ sender: UIButton) {
+        tinderCardView.swipeCurrentCard(to: .right)
+    }
+    
 }
 
