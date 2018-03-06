@@ -27,8 +27,22 @@ Please write the below code in Podfile
 ```
 pod ‘TinderCard’, :git => 'https://github.com/HideakiTouhara/TinderCard.git’
 ```
+### Carthage
+Write this code in your Cartfile.
 
-Carthage also can do.
+```
+github "HideakiTouhara/TinderCard"
+```
+
+and implement this command
+
+```
+carthage update
+```
+
+Add TinderCard.framework in /Carthage/Build/iOS/ to Embedded Binaries.
+
+![CarthageDemo](https://github.com/HideakiTouhara/TinderCard/blob/resources/Resources/CarthageDemo.jpg)
 
 ## Usage
 Create TinderCardView in storyboard or swift file
@@ -105,6 +119,20 @@ When last card was swiped, this method is called
 func tinderCard(_ tinderCard: TinderCardView, runOutOfCardAt: Int, in direction: SwipeDirection)
 ```
 
+### Public method
+
+Swipe current card
+
+```
+func swipeCurrentCard(to direction: SwipeDirection)
+```
+
+Undo animation and go back previous card
+
+```
+func undo()
+```
+
 ## Example
 Check the Example file!
 
@@ -164,6 +192,15 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
 
     func tinderCard(_ tinderCard: TinderCardView, runOutOfCardAt: Int, in direction: SwipeDirection) {
         print("last")
+    }
+
+    // MARK: IBAction
+    @IBAction func OKAction(_ sender: UIButton) {
+        tinderCardView.swipeCurrentCard(to: .right)
+    }
+
+    @IBAction func undo(_ sender: UIButton) {
+        tinderCardView.undo()
     }
 }
 ```
