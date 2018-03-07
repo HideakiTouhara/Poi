@@ -68,5 +68,8 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
         tinderCardView.swipeCurrentCard(to: .right)
     }
     
+    @IBAction func undo(_ sender: UIButton) {
+        tinderCardView.undo()
+    }
 }
 
