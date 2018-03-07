@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TinderCard"
-  s.version      = "1.0.0"
+  s.version      = "2.0.0"
   s.summary      = "Use tinde like UI instantly."
 
   # This description is used to generate tags and improve search results.
@@ -134,4 +134,3 @@ Pod::Spec.new do |s|
   # s.dependency "JSONKit", "~> 1.4"
 
 end
-
