@@ -1,23 +1,23 @@
-# TinderCard
+# Poi
 You can use tinder UI like tableview method
 
-![demo](https://github.com/HideakiTouhara/TinderCard/blob/resources/Resources/demo.gif)
+![demo](https://github.com/HideakiTouhara/Poi/blob/resources/Resources/demo.gif)
 
 ## Installation
 ### Manual Installation
 1. you use this command
 
 ```
-git clone git@github.com:HideakiTouhara/TinderCard.git
+git clone git@github.com:HideakiTouhara/Card.git
 ```
 
-2. Import TinderCard.xcodeproj to your project
+2. Import Poi.xcodeproj to your project
 
-![screenshot1](https://github.com/HideakiTouhara/TinderCard/blob/resources/Resources/screenshot1.jpg)
+![direct_import1](https://github.com/HideakiTouhara/Poi/blob/resources/Resources/direct_import1.jpg)
 
-3. Add TinderCard.frameworkiOS to Embedded Binaries
+3. Add Poi.frameworkiOS to Embedded Binaries
 
-![screenshot2](https://github.com/HideakiTouhara/TinderCard/blob/resources/Resources/screenshot2.jpg)
+![direct_import2](https://github.com/HideakiTouhara/Poi/blob/resources/Resources/direct_import2.jpg)
 
 
 
@@ -25,13 +25,13 @@ git clone git@github.com:HideakiTouhara/TinderCard.git
 Please write the below code in Podfile
 
 ```
-pod ‘TinderCard’, :git => 'https://github.com/HideakiTouhara/TinderCard.git’
+pod ‘Poi’, :git => 'https://github.com/HideakiTouhara/Poi.git’
 ```
 ### Carthage
 Write this code in your Cartfile.
 
 ```
-github "HideakiTouhara/TinderCard"
+github "HideakiTouhara/Poi"
 ```
 
 and implement this command
@@ -40,33 +40,33 @@ and implement this command
 carthage update
 ```
 
-Add TinderCard.framework in /Carthage/Build/iOS/ to Embedded Binaries.
+Add Poi.framework in /Carthage/Build/iOS/ to Embedded Binaries.
 
-![CarthageDemo](https://github.com/HideakiTouhara/TinderCard/blob/resources/Resources/CarthageDemo.jpg)
+![carthage_import](https://github.com/HideakiTouhara/Poi/blob/resources/Resources/carthage_import.jpg)
 
 ## Usage
-Create TinderCardView in storyboard or swift file
+Create PoiView in storyboard or swift file
 
 ```
-import TinderCard
+import Poi
 
-@IBOutlet weak var tinderCardView: TinderCardView!
-// You should change tinderCardView's class to TinderCardView in Attributes inspector.
+@IBOutlet weak var PoiView: PoiView!
+// You should change poiView's class to PoiView in Attributes inspector.
 ```
 
 or
 
 ```
-import TinderCard
+import Poi
 
- let tinderCardView = TinderCardView()
- self.view.addSubView(tinderCardView)
+ let poiView = PoiView()
+ self.view.addSubView(poiView)
 ```
 
-Conform to TinderCardViewDataSource and TinderCardViewDelegate
+Conform to PoiViewDataSource and PoiViewDelegate
 
 ```
-class ViewController: UIViewController, TinderCardViewDataSource, TinderCardViewDelegate {
+class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
 ```
 
 Designate delegate target.
@@ -74,28 +74,28 @@ Designate delegate target.
 Please put this code after setting card contents.
 
 ```
-tinderCardView.dataSource = self
-tinderCardView.delegate = self
+poiView.dataSource = self
+poiView.delegate = self
 ```
 
-### TinderCardViewDataSource method
+### PoiViewDataSource method
 
 Set swipeable card number
 
 ```
-func numberOfCards(_ tinderCard: TinderCardView) -> Int
+func numberOfCards(_ poi: PoiView) -> Int
 ```
 
 Set swipeable card
 
 ```
-func tinderCard(_ tinderCard: TinderCardView, viewForCardAt index: Int) -> UIView
+func poi(_ poi: PoiView, viewForCardAt index: Int) -> UIView
 ```
 
 Set overlay image if right or left swiped
 
 ```
-func tinderCard(_ tinderCard: TinderCardView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
+func poi(_ poi: PoiView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
     switch direction {
     case .right:
         return UIImageView(image: #imageLiteral(resourceName: "good"))
@@ -105,18 +105,18 @@ func tinderCard(_ tinderCard: TinderCardView, viewForCardOverlayFor direction: S
 }
 ```
 
-### TinderCardViewDelegate method
+### PoiViewDelegate method
 
 When did swipe, this method is called
 
 ```
-func tinderCard(_ tinderCard: TinderCardView, didSwipeCardAt: Int, in direction: SwipeDirection)
+func poi(_ poi: PoiView, didSwipeCardAt: Int, in direction: SwipeDirection)
 ```
 
 When last card was swiped, this method is called
 
 ```
-func tinderCard(_ tinderCard: TinderCardView, runOutOfCardAt: Int, in direction: SwipeDirection)
+func poi(_ poi: PoiView, runOutOfCardAt: Int, in direction: SwipeDirection)
 ```
 
 ### Public method
@@ -138,11 +138,11 @@ Check the Example file!
 
 ```
 import UIKit
-import TinderCard
+import Poi
 
-class ViewController: UIViewController, TinderCardViewDataSource, TinderCardViewDelegate {
+class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
 
-    @IBOutlet weak var tinderCardView: TinderCardView!
+    @IBOutlet weak var poiView: PoiView!
 
     var sampleCards = [UIView]()
 
@@ -153,25 +153,24 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
             sampleCards.append(UIView(frame: CGRect(x: 0, y: 0, width: 240, height: 128)))
             sampleCards[i].backgroundColor = colors[i]
         }
-        tinderCardView.dataSource = self
-        tinderCardView.delegate = self
+        poiView.dataSource = self
+        poiView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: TinderCardViewDataSource
-    func numberOfCards(_ tinderCard: TinderCardView) -> Int {
+    // MARK: PoiViewDataSource
+    func numberOfCards(_ poi: PoiView) -> Int {
         return 2
     }
 
-    func tinderCard(_ tinderCard: TinderCardView, viewForCardAt index: Int) -> UIView {
+    func poi(_ poi: PoiView, viewForCardAt index: Int) -> UIView {
         return sampleCards[index]
     }
 
-    func tinderCard(_ tinderCard: TinderCardView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
+    func poi(_ poi: PoiView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
         switch direction {
         case .right:
             return UIImageView(image: #imageLiteral(resourceName: "good"))
@@ -180,8 +179,8 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
         }
     }
 
-    // MARK: TinderCardViewDelegate
-    func tinderCard(_ tinderCard: TinderCardView, didSwipeCardAt: Int, in direction: SwipeDirection) {
+    // MARK: PoiViewDelegate
+    func poi(_ poi: PoiView, didSwipeCardAt: Int, in direction: SwipeDirection) {
         switch direction {
         case .left:
             print("left")
@@ -190,17 +189,17 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
         }
     }
 
-    func tinderCard(_ tinderCard: TinderCardView, runOutOfCardAt: Int, in direction: SwipeDirection) {
+    func poi(_ poi: PoiView, runOutOfCardAt: Int, in direction: SwipeDirection) {
         print("last")
     }
 
     // MARK: IBAction
     @IBAction func OKAction(_ sender: UIButton) {
-        tinderCardView.swipeCurrentCard(to: .right)
+        poiView.swipeCurrentCard(to: .right)
     }
 
     @IBAction func undo(_ sender: UIButton) {
-        tinderCardView.undo()
+        poiView.undo()
     }
 }
 ```
@@ -208,6 +207,6 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
 Please create issues or submit pull requests for anything.
 
 ## License
-TinderCard is released under the MIT license.
+Poi is released under the MIT license.
 
 © 2018 GitHub, Inc.
