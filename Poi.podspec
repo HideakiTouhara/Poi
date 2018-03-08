@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "TinderCard"
-  s.version      = "2.0.0"
+  s.name         = "Poi"
+  s.version      = "3.0.0"
   s.summary      = "Use tinde like UI instantly."
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 		   - You can implement tinder UI like tableView.
                    DESC
 
-  s.homepage     = "https://github.com/HideakiTouhara/TinderCard"
+  s.homepage     = "https://github.com/HideakiTouhara/Poi"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/HideakiTouhara/TinderCard.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/HideakiTouhara/Poi.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "TinderCard/**/*.swift"
+  s.source_files  = "Poi/**/*.swift"
   s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
