@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import TinderCard
+import Poi
 
-class ViewController: UIViewController, TinderCardViewDataSource, TinderCardViewDelegate {
+class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
     
-    @IBOutlet weak var tinderCardView: TinderCardView!
+    @IBOutlet weak var poiView: PoiView!
     
     var sampleCards = [UIView]()
     
@@ -22,25 +22,24 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
             sampleCards.append(UIView(frame: CGRect(x: 0, y: 0, width: 240, height: 128)))
             sampleCards[i].backgroundColor = colors[i]
         }
-        tinderCardView.dataSource = self
-        tinderCardView.delegate = self
+        poiView.dataSource = self
+        poiView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // MARK: TinderCardViewDataSource
-    func numberOfCards(_ tinderCard: TinderCardView) -> Int {
+    // MARK: PoiViewDataSource
+    func numberOfCards(_ poi: PoiView) -> Int {
         return 2
     }
 
-    func tinderCard(_ tinderCard: TinderCardView, viewForCardAt index: Int) -> UIView {
+    func poi(_ poi: PoiView, viewForCardAt index: Int) -> UIView {
         return sampleCards[index]
     }
     
-    func tinderCard(_ tinderCard: TinderCardView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
+    func poi(_ poi: PoiView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
         switch direction {
         case .right:
             return UIImageView(image: #imageLiteral(resourceName: "good"))
@@ -49,8 +48,8 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
         }
     }
     
-    // MARK: TinderCardViewDelegate
-    func tinderCard(_ tinderCard: TinderCardView, didSwipeCardAt: Int, in direction: SwipeDirection) {
+    // MARK: PoiViewDelegate
+    func poi(_ poi: PoiView, didSwipeCardAt: Int, in direction: SwipeDirection) {
         switch direction {
         case .left:
             print("left")
@@ -59,17 +58,17 @@ class ViewController: UIViewController, TinderCardViewDataSource, TinderCardView
         }
     }
     
-    func tinderCard(_ tinderCard: TinderCardView, runOutOfCardAt: Int, in direction: SwipeDirection) {
+    func poi(_ poi: PoiView, runOutOfCardAt: Int, in direction: SwipeDirection) {
         print("last")
     }
     
     // MARK: IBAction
     @IBAction func OKAction(_ sender: UIButton) {
-        tinderCardView.swipeCurrentCard(to: .right)
+        poiView.swipeCurrentCard(to: .right)
     }
     
     @IBAction func undo(_ sender: UIButton) {
-        tinderCardView.undo()
+        poiView.undo()
     }
 }
 

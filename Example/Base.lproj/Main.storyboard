@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vJ-dX-VBD" customClass="TinderCardView" customModule="TinderCard">
-                                <rect key="frame" x="53" y="128" width="268" height="411"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vJ-dX-VBD" customClass="PoiView" customModule="Poi">
+                                <rect key="frame" x="53.5" y="128" width="268" height="411"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="411" id="6h8-kj-FxU"/>
@@ -51,7 +51,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="tinderCardView" destination="5vJ-dX-VBD" id="ypg-ye-3nZ"/>
+                        <outlet property="poiView" destination="5vJ-dX-VBD" id="sO7-xh-be1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

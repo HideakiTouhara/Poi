@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07BEC93320440781008715B6"
-               BuildableName = "TinderCard.framework"
-               BlueprintName = "TinderCard"
-               ReferencedContainer = "container:TinderCard.xcodeproj">
+               BuildableName = "Poi.framework"
+               BlueprintName = "Poi"
+               ReferencedContainer = "container:Poi.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,9 +48,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07BEC93320440781008715B6"
-            BuildableName = "TinderCard.framework"
-            BlueprintName = "TinderCard"
-            ReferencedContainer = "container:TinderCard.xcodeproj">
+            BuildableName = "Poi.framework"
+            BlueprintName = "Poi"
+            ReferencedContainer = "container:Poi.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07BEC93320440781008715B6"
-            BuildableName = "TinderCard.framework"
-            BlueprintName = "TinderCard"
-            ReferencedContainer = "container:TinderCard.xcodeproj">
+            BuildableName = "Poi.framework"
+            BlueprintName = "Poi"
+            ReferencedContainer = "container:Poi.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

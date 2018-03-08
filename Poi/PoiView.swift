@@ -1,6 +1,6 @@
 //
-//  TinderCardView.swift
-//  TinderCard
+//  PoiView.swift
+//  Poi
 //
 //  Created by HideakiTouhara on 2018/02/26.
 //  Copyright © 2018年 HideakiTouhara. All rights reserved.
@@ -8,24 +8,24 @@
 
 import UIKit
 
-public protocol TinderCardViewDataSource: class {
-    func numberOfCards(_ tinderCard: TinderCardView) -> Int
-    func tinderCard(_ tinderCard: TinderCardView, viewForCardAt index: Int) -> UIView
-    func tinderCard(_ tinderCard: TinderCardView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView?
+public protocol PoiViewDataSource: class {
+    func numberOfCards(_ poi: PoiView) -> Int
+    func poi(_ poi: PoiView, viewForCardAt index: Int) -> UIView
+    func poi(_ poi: PoiView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView?
 }
 
-public protocol TinderCardViewDelegate: class {
-    func tinderCard(_ tinderCard: TinderCardView, didSwipeCardAt: Int, in direction: SwipeDirection)
-    func tinderCard(_ tinderCard: TinderCardView, runOutOfCardAt: Int, in direction: SwipeDirection)
+public protocol PoiViewDelegate: class {
+    func poi(_ poi: PoiView, didSwipeCardAt: Int, in direction: SwipeDirection)
+    func poi(_ poi: PoiView, runOutOfCardAt: Int, in direction: SwipeDirection)
 }
 
-public extension TinderCardViewDataSource {
-    func tinderCard(_ tinderCard: TinderCardView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
+public extension PoiViewDataSource {
+    func poi(_ poi: PoiView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
         return nil
     }
 }
 
-public class TinderCardView: UIView {
+public class PoiView: UIView {
     
     var contentViews = [UIView]()
     var currentCount = 0
@@ -42,13 +42,13 @@ public class TinderCardView: UIView {
         super.init(coder: aDecoder)
     }
     
-    public weak var dataSource: TinderCardViewDataSource? {
+    public weak var dataSource: PoiViewDataSource? {
         didSet {
             setUp()
         }
     }
     
-    public weak var delegate: TinderCardViewDelegate?
+    public weak var delegate: PoiViewDelegate?
     
     public func swipeCurrentCard(to direction: SwipeDirection) {
         
@@ -89,13 +89,13 @@ public class TinderCardView: UIView {
         cardCriteria = basicView.center
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
         basicView.addGestureRecognizer(panGesture)
-        if let image = dataSource?.tinderCard(self, viewForCardOverlayFor: .right) {
+        if let image = dataSource?.poi(self, viewForCardOverlayFor: .right) {
             goodImage = image
             basicView.addSubview(goodImage!)
             goodImage?.center = calcBasicCardCenter()
             goodImage?.alpha = 0
         }
-        if let image = dataSource?.tinderCard(self, viewForCardOverlayFor: .left) {
+        if let image = dataSource?.poi(self, viewForCardOverlayFor: .left) {
             badImage = image
             basicView.addSubview(badImage!)
             badImage?.center = calcBasicCardCenter()
@@ -105,7 +105,7 @@ public class TinderCardView: UIView {
     
     private func createCard(index: Int) -> UIView {
         if let dataSource = dataSource {
-            return dataSource.tinderCard(self, viewForCardAt: index)
+            return dataSource.poi(self, viewForCardAt: index)
         }
         return UIView()
     }
@@ -152,9 +152,9 @@ public class TinderCardView: UIView {
                 currentCount += 1
                 card.center = cardCriteria
                 card.transform = CGAffineTransform.identity
-                delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .left)
+                delegate?.poi(self, didSwipeCardAt: currentCount, in: .left)
                 if currentCount == contentViews.count {
-                    delegate?.tinderCard(self, runOutOfCardAt: currentCount, in: .left)
+                    delegate?.poi(self, runOutOfCardAt: currentCount, in: .left)
                 }
                 resetImageAlpha()
                 return
@@ -165,9 +165,9 @@ public class TinderCardView: UIView {
                 currentCount += 1
                 card.center = cardCriteria
                 card.transform = CGAffineTransform.identity
-                delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .right)
+                delegate?.poi(self, didSwipeCardAt: currentCount, in: .right)
                 if currentCount == contentViews.count {
-                    delegate?.tinderCard(self, runOutOfCardAt: currentCount, in: .right)
+                    delegate?.poi(self, runOutOfCardAt: currentCount, in: .right)
                 }
                 resetImageAlpha()
                 return
@@ -191,9 +191,9 @@ public class TinderCardView: UIView {
             currentCount += 1
             basicView.center = cardCriteria
             basicView.transform = CGAffineTransform.identity
-            delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .left)
+            delegate?.poi(self, didSwipeCardAt: currentCount, in: .left)
             if currentCount == contentViews.count {
-                delegate?.tinderCard(self, runOutOfCardAt: currentCount, in: .left)
+                delegate?.poi(self, runOutOfCardAt: currentCount, in: .left)
             }
             resetImageAlpha()
         case .right:
@@ -203,9 +203,9 @@ public class TinderCardView: UIView {
             currentCount += 1
             basicView.center = cardCriteria
             basicView.transform = CGAffineTransform.identity
-            delegate?.tinderCard(self, didSwipeCardAt: currentCount, in: .right)
+            delegate?.poi(self, didSwipeCardAt: currentCount, in: .right)
             if currentCount == contentViews.count {
-                delegate?.tinderCard(self, runOutOfCardAt: currentCount, in: .right)
+                delegate?.poi(self, runOutOfCardAt: currentCount, in: .right)
             }
             resetImageAlpha()
         }

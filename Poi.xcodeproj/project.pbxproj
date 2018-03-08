@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		07602C6E2046B1BF00144890 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07602C6D2046B1BF00144890 /* SwipeDirection.swift */; };
-		0782C77A204409BC00BACD00 /* TinderCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782C779204409BC00BACD00 /* TinderCardView.swift */; };
+		0782C77A204409BC00BACD00 /* PoiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782C779204409BC00BACD00 /* PoiView.swift */; };
 		0782C78220440B0000BACD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782C78120440B0000BACD00 /* AppDelegate.swift */; };
 		0782C78420440B0000BACD00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782C78320440B0000BACD00 /* ViewController.swift */; };
 		0782C78720440B0000BACD00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0782C78520440B0000BACD00 /* Main.storyboard */; };
 		0782C78920440B0000BACD00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0782C78820440B0000BACD00 /* Assets.xcassets */; };
 		0782C78C20440B0000BACD00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0782C78A20440B0000BACD00 /* LaunchScreen.storyboard */; };
-		0782C79120440B1F00BACD00 /* TinderCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BEC93420440781008715B6 /* TinderCard.framework */; };
-		0782C79220440B1F00BACD00 /* TinderCard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07BEC93420440781008715B6 /* TinderCard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		07BEC93920440781008715B6 /* TinderCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BEC93720440781008715B6 /* TinderCard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0782C79120440B1F00BACD00 /* Poi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BEC93420440781008715B6 /* Poi.framework */; };
+		0782C79220440B1F00BACD00 /* Poi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07BEC93420440781008715B6 /* Poi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07BEC93920440781008715B6 /* Poi.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BEC93720440781008715B6 /* Poi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0782C79220440B1F00BACD00 /* TinderCard.framework in Embed Frameworks */,
+				0782C79220440B1F00BACD00 /* Poi.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		07602C6D2046B1BF00144890 /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
-		0782C779204409BC00BACD00 /* TinderCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCardView.swift; sourceTree = "<group>"; };
+		0782C779204409BC00BACD00 /* PoiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiView.swift; sourceTree = "<group>"; };
 		0782C77F20440B0000BACD00 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0782C78120440B0000BACD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0782C78320440B0000BACD00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,8 +53,8 @@
 		0782C78820440B0000BACD00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0782C78B20440B0000BACD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0782C78D20440B0000BACD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07BEC93420440781008715B6 /* TinderCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinderCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07BEC93720440781008715B6 /* TinderCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinderCard.h; sourceTree = "<group>"; };
+		07BEC93420440781008715B6 /* Poi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Poi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07BEC93720440781008715B6 /* Poi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Poi.h; sourceTree = "<group>"; };
 		07BEC93820440781008715B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0782C79120440B1F00BACD00 /* TinderCard.framework in Frameworks */,
+				0782C79120440B1F00BACD00 /* Poi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +93,7 @@
 		07BEC92A20440781008715B6 = {
 			isa = PBXGroup;
 			children = (
-				07BEC93620440781008715B6 /* TinderCard */,
+				07BEC93620440781008715B6 /* Poi */,
 				0782C78020440B0000BACD00 /* Example */,
 				07BEC93520440781008715B6 /* Products */,
 			);
@@ -102,21 +102,21 @@
 		07BEC93520440781008715B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07BEC93420440781008715B6 /* TinderCard.framework */,
+				07BEC93420440781008715B6 /* Poi.framework */,
 				0782C77F20440B0000BACD00 /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		07BEC93620440781008715B6 /* TinderCard */ = {
+		07BEC93620440781008715B6 /* Poi */ = {
 			isa = PBXGroup;
 			children = (
-				07BEC93720440781008715B6 /* TinderCard.h */,
+				07BEC93720440781008715B6 /* Poi.h */,
 				07BEC93820440781008715B6 /* Info.plist */,
-				0782C779204409BC00BACD00 /* TinderCardView.swift */,
+				0782C779204409BC00BACD00 /* PoiView.swift */,
 				07602C6D2046B1BF00144890 /* SwipeDirection.swift */,
 			);
-			path = TinderCard;
+			path = Poi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +126,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07BEC93920440781008715B6 /* TinderCard.h in Headers */,
+				07BEC93920440781008715B6 /* Poi.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,9 +152,9 @@
 			productReference = 0782C77F20440B0000BACD00 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		07BEC93320440781008715B6 /* TinderCard */ = {
+		07BEC93320440781008715B6 /* Poi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07BEC93C20440781008715B6 /* Build configuration list for PBXNativeTarget "TinderCard" */;
+			buildConfigurationList = 07BEC93C20440781008715B6 /* Build configuration list for PBXNativeTarget "Poi" */;
 			buildPhases = (
 				07BEC92F20440781008715B6 /* Sources */,
 				07BEC93020440781008715B6 /* Frameworks */,
@@ -165,9 +165,9 @@
 			);
 			dependencies = (
 			);
-			name = TinderCard;
+			name = Poi;
 			productName = TinderCard;
-			productReference = 07BEC93420440781008715B6 /* TinderCard.framework */;
+			productReference = 07BEC93420440781008715B6 /* Poi.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -191,7 +191,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 07BEC92E20440781008715B6 /* Build configuration list for PBXProject "TinderCard" */;
+			buildConfigurationList = 07BEC92E20440781008715B6 /* Build configuration list for PBXProject "Poi" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -204,7 +204,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				07BEC93320440781008715B6 /* TinderCard */,
+				07BEC93320440781008715B6 /* Poi */,
 				0782C77E20440B0000BACD00 /* Example */,
 			);
 		};
@@ -245,7 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07602C6E2046B1BF00144890 /* SwipeDirection.swift in Sources */,
-				0782C77A204409BC00BACD00 /* TinderCardView.swift in Sources */,
+				0782C77A204409BC00BACD00 /* PoiView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +254,7 @@
 /* Begin PBXTargetDependency section */
 		0782C79420440B1F00BACD00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 07BEC93320440781008715B6 /* TinderCard */;
+			target = 07BEC93320440781008715B6 /* Poi */;
 			targetProxy = 0782C79320440B1F00BACD00 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -435,10 +435,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TinderCard/Info.plist;
+				INFOPLIST_FILE = Poi/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-HideakiTouhara.TinderCard";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-HideakiTouhara.Poi";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -458,10 +458,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TinderCard/Info.plist;
+				INFOPLIST_FILE = Poi/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-HideakiTouhara.TinderCard";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-HideakiTouhara.Poi";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -481,7 +481,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07BEC92E20440781008715B6 /* Build configuration list for PBXProject "TinderCard" */ = {
+		07BEC92E20440781008715B6 /* Build configuration list for PBXProject "Poi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07BEC93A20440781008715B6 /* Debug */,
@@ -490,7 +490,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07BEC93C20440781008715B6 /* Build configuration list for PBXNativeTarget "TinderCard" */ = {
+		07BEC93C20440781008715B6 /* Build configuration list for PBXNativeTarget "Poi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07BEC93D20440781008715B6 /* Debug */,

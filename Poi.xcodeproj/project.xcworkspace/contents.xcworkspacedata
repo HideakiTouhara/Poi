@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TinderCard.xcodeproj">
+      location = "self:/Users/hideakitouhara/private/ios/Library/TinderCard/Poi.xcodeproj">
    </FileRef>
 </Workspace>
