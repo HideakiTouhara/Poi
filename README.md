@@ -8,7 +8,7 @@ You can use tinder UI like tableview method
 1. you use this command
 
 ```
-git clone git@github.com:HideakiTouhara/Card.git
+git clone git@github.com:HideakiTouhara/Poi.git
 ```
 
 2. Import Poi.xcodeproj to your project
