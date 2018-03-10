@@ -1,4 +1,6 @@
-# Poi
+# Poi  
+[![Pod version](https://badge.fury.io/co/Poi.svg)](https://badge.fury.io/co/Poi) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE) ![Swift 4.0.x](https://img.shields.io/badge/Swift-4.0.x-orange.svg)
+
 You can use tinder UI like tableview method
 
 ![demo](https://github.com/HideakiTouhara/Poi/blob/resources/Resources/demo.gif)
@@ -59,8 +61,8 @@ or
 ```
 import Poi
 
- let poiView = PoiView()
- self.view.addSubView(poiView)
+let poiView = PoiView()
+self.view.addSubView(poiView)
 ```
 
 Conform to PoiViewDataSource and PoiViewDelegate
