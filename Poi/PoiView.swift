@@ -124,8 +124,9 @@ public class PoiView: UIView {
         let card = sender.view!
         let view = (UIApplication.shared.keyWindow?.rootViewController?.view)!
         let location = sender.translation(in: view)
-        contentViews[currentCount].center = CGPoint(x: card.center.x + location.x, y: card.center.y + location.y)
+        sender.setTranslation(CGPoint.zero, in: view)
         card.center = CGPoint(x: card.center.x + location.x, y: card.center.y + location.y)
+        contentViews[currentCount].center = card.center
         
         let xFromCenter = card.center.x - cardCriteria.x
         contentViews[currentCount].transform = CGAffineTransform(rotationAngle: 0.5 * (xFromCenter / (self.frame.width / 2)))
