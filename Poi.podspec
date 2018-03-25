@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Poi"
-  s.version      = "3.0.0"
+  s.version      = "3.1.0"
   s.summary      = "Use tinder like UI instantly."
 
   # This description is used to generate tags and improve search results.
