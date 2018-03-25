@@ -27,7 +27,7 @@ git clone git@github.com:HideakiTouhara/Poi.git
 Please write the below code in Podfile
 
 ```
-pod ‘Poi’, :git => 'https://github.com/HideakiTouhara/Poi.git’
+pod ‘Poi’
 ```
 ### Carthage
 Write this code in your Cartfile.
@@ -82,13 +82,13 @@ poiView.delegate = self
 
 ### PoiViewDataSource method
 
-Set swipeable card number
+Set swipeable card number(required method)
 
 ```
 func numberOfCards(_ poi: PoiView) -> Int
 ```
 
-Set swipeable card
+Set swipeable card(required method)
 
 ```
 func poi(_ poi: PoiView, viewForCardAt index: Int) -> UIView
