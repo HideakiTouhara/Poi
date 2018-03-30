@@ -49,7 +49,7 @@ Add Poi.framework in /Carthage/Build/iOS/ to Embedded Binaries.
 ## Usage
 Create PoiView in storyboard or swift file
 
-```
+``` swift
 import Poi
 
 @IBOutlet weak var PoiView: PoiView!
@@ -58,7 +58,7 @@ import Poi
 
 or
 
-```
+``` swift
 import Poi
 
 let poiView = PoiView()
@@ -67,7 +67,7 @@ self.view.addSubView(poiView)
 
 Conform to PoiViewDataSource and PoiViewDelegate
 
-```
+``` swift
 class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
 ```
 
@@ -75,7 +75,7 @@ Designate delegate target.
 
 Please put this code after setting card contents.
 
-```
+``` swift
 poiView.dataSource = self
 poiView.delegate = self
 ```
@@ -84,19 +84,19 @@ poiView.delegate = self
 
 Set swipeable card number(required method)
 
-```
+``` swift
 func numberOfCards(_ poi: PoiView) -> Int
 ```
 
 Set swipeable card(required method)
 
-```
+``` swift
 func poi(_ poi: PoiView, viewForCardAt index: Int) -> UIView
 ```
 
 Set overlay image if right or left swiped
 
-```
+``` swift
 func poi(_ poi: PoiView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
     switch direction {
     case .right:
@@ -111,13 +111,13 @@ func poi(_ poi: PoiView, viewForCardOverlayFor direction: SwipeDirection) -> UII
 
 When did swipe, this method is called
 
-```
+``` swift
 func poi(_ poi: PoiView, didSwipeCardAt: Int, in direction: SwipeDirection)
 ```
 
 When last card was swiped, this method is called
 
-```
+``` swift
 func poi(_ poi: PoiView, runOutOfCardAt: Int, in direction: SwipeDirection)
 ```
 
@@ -125,20 +125,20 @@ func poi(_ poi: PoiView, runOutOfCardAt: Int, in direction: SwipeDirection)
 
 Swipe current card
 
-```
+``` swift
 func swipeCurrentCard(to direction: SwipeDirection)
 ```
 
 Undo animation and go back previous card
 
-```
+``` swift
 func undo()
 ```
 
 ## Example
 Check the Example file!
 
-```
+``` swift
 import UIKit
 import Poi
 
