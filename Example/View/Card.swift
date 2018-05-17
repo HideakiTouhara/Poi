@@ -10,11 +10,11 @@ import UIKit
 
 class Card: UIView {
     
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var label: UILabel!
+    override init(frame: CGRect){
+        super.init(frame: frame)
+    }
     
-    func prepareUI(img: UIImage, text: String) {
-        image.image = img
-        label.text = text
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
     }
 }

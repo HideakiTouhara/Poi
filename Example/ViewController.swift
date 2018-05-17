@@ -13,21 +13,24 @@ class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
     
     @IBOutlet weak var poiView: PoiView!
     
-    var sampleCards = [UIView]()
+    var sampleCards = [Card]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var colors = [UIColor.red, UIColor.orange]
-        for i in (0..<2) {
-            sampleCards.append(UIView(frame: CGRect(x: 0, y: 0, width: 240, height: 128)))
-            sampleCards[i].backgroundColor = colors[i]
-        }
+        createViews()
         poiView.dataSource = self
         poiView.delegate = self
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private func createViews() {
+        for i in (0...2) {
+            let card = UINib(nibName: "Card", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! Card
+            sampleCards.append(card)
+        }
     }
     
     // MARK: PoiViewDataSource
