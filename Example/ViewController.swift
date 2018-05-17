@@ -27,8 +27,11 @@ class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
     }
     
     private func createViews() {
-        for i in (0...2) {
+        for i in (0..<2) {
+            let texts = ["sushi", "steak"]
+            let images = [#imageLiteral(resourceName: "sushi"), #imageLiteral(resourceName: "meat")]
             let card = UINib(nibName: "Card", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! Card
+            card.prepareUI(text: texts[i], img: images[i])
             sampleCards.append(card)
         }
     }
@@ -45,9 +48,13 @@ class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
     func poi(_ poi: PoiView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
         switch direction {
         case .right:
-            return UIImageView(image: #imageLiteral(resourceName: "good"))
+            let good = UIImageView(image: #imageLiteral(resourceName: "good"))
+            good.tintColor = UIColor.green
+            return good
         case .left:
-            return UIImageView(image: #imageLiteral(resourceName: "bad"))
+            let bad = UIImageView(image: #imageLiteral(resourceName: "bad"))
+            bad.tintColor = UIColor.red
+            return bad
         }
     }
     
