@@ -67,6 +67,10 @@ class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
         poiView.swipeCurrentCard(to: .right)
     }
     
+    @IBAction func cancelAction(_ sender: UIButton) {
+        poiView.swipeCurrentCard(to: .left)
+    }
+    
     @IBAction func undo(_ sender: UIButton) {
         poiView.undo()
     }
