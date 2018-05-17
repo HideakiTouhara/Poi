@@ -57,7 +57,13 @@ public class PoiView: UIView {
         }
         
         UIView.animate(withDuration: 0.4, animations: {
-            self.contentViews[self.currentCount].transform = CGAffineTransform(rotationAngle: -0.5 * (self.frame.width / 2))
+            var angleDirection: CGFloat = 0
+            if direction == .right {
+                angleDirection = -1
+            } else if direction == .left {
+                angleDirection = 1
+            }
+            self.contentViews[self.currentCount].transform = CGAffineTransform(rotationAngle: angleDirection * 0.5 * (self.frame.width / 2))
         })
         swipe(at: direction, by: 600)
     }
