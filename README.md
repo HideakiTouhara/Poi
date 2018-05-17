@@ -3,7 +3,7 @@
 
 You can use tinder UI like tableview method
 
-![demo](https://github.com/HideakiTouhara/Poi/blob/resources/Resources/demo.gif)
+![demo1](https://github.com/HideakiTouhara/Poi/blob/resources/Resources/sample_demo.gif)
 
 ## Installation
 ### Manual Installation

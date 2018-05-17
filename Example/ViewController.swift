@@ -13,21 +13,27 @@ class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
     
     @IBOutlet weak var poiView: PoiView!
     
-    var sampleCards = [UIView]()
+    var sampleCards = [Card]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var colors = [UIColor.red, UIColor.orange]
-        for i in (0..<2) {
-            sampleCards.append(UIView(frame: CGRect(x: 0, y: 0, width: 240, height: 128)))
-            sampleCards[i].backgroundColor = colors[i]
-        }
+        createViews()
         poiView.dataSource = self
         poiView.delegate = self
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private func createViews() {
+        for i in (0..<2) {
+            let texts = ["sushi", "steak"]
+            let images = [#imageLiteral(resourceName: "sushi"), #imageLiteral(resourceName: "meat")]
+            let card = UINib(nibName: "Card", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! Card
+            card.prepareUI(text: texts[i], img: images[i])
+            sampleCards.append(card)
+        }
     }
     
     // MARK: PoiViewDataSource
@@ -42,9 +48,13 @@ class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
     func poi(_ poi: PoiView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
         switch direction {
         case .right:
-            return UIImageView(image: #imageLiteral(resourceName: "good"))
+            let good = UIImageView(image: #imageLiteral(resourceName: "good"))
+            good.tintColor = UIColor.green
+            return good
         case .left:
-            return UIImageView(image: #imageLiteral(resourceName: "bad"))
+            let bad = UIImageView(image: #imageLiteral(resourceName: "bad"))
+            bad.tintColor = UIColor.red
+            return bad
         }
     }
     
@@ -65,6 +75,10 @@ class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
     // MARK: IBAction
     @IBAction func OKAction(_ sender: UIButton) {
         poiView.swipeCurrentCard(to: .right)
+    }
+    
+    @IBAction func cancelAction(_ sender: UIButton) {
+        poiView.swipeCurrentCard(to: .left)
     }
     
     @IBAction func undo(_ sender: UIButton) {
