@@ -7,7 +7,7 @@ You can use tinder UI like tableview method
 
 ## Installation
 ### Manual Installation
-1. you use this command
+1. Use this command
 
 ```
 git clone git@github.com:HideakiTouhara/Poi.git
@@ -52,8 +52,8 @@ Create PoiView in storyboard or swift file
 ``` swift
 import Poi
 
-@IBOutlet weak var PoiView: PoiView!
-// You should change poiView's class to PoiView in Attributes inspector.
+@IBOutlet weak var poiView: PoiView!
+// Change View's class to PoiView in Attributes inspector.
 ```
 
 or
