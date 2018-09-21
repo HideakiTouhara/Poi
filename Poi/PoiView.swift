@@ -151,7 +151,7 @@ public class PoiView: UIView {
             }
         }
 
-        if sender.state == UIGestureRecognizerState.ended {
+        if sender.state == UIGestureRecognizer.State.ended {
             if card.center.x < 75 {
                 UIView.animate(withDuration: 0.4, animations: {
                     self.contentViews[self.currentCount].center = CGPoint(x: self.contentViews[self.currentCount].center.x - 300, y: self.contentViews[self.currentCount].center.y)
