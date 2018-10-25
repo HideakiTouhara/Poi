@@ -14,6 +14,18 @@ class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
     @IBOutlet weak var poiView: PoiView!
     
     var sampleCards = [Card]()
+    let alternateSampleCards: [Card] = {
+        var cards: [Card] = []
+        let texts = ["ramen", "steak", "sushi"]
+        let images = [#imageLiteral(resourceName: "ramen"), #imageLiteral(resourceName: "meat"), #imageLiteral(resourceName: "sushi")]
+        for i in (0..<3) {
+            let card = UINib(nibName: "Card", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! Card
+            card.prepareUI(text: texts[i], img: images[i])
+            cards.append(card)
+        }
+        return cards
+    }()
+    var usesAlternate: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +50,11 @@ class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
     
     // MARK: PoiViewDataSource
     func numberOfCards(_ poi: PoiView) -> Int {
-        return 2
+        return usesAlternate ? alternateSampleCards.count : sampleCards.count
     }
 
     func poi(_ poi: PoiView, viewForCardAt index: Int) -> UIView {
-        return sampleCards[index]
+        return usesAlternate ? alternateSampleCards[index] : sampleCards[index]
     }
     
     func poi(_ poi: PoiView, viewForCardOverlayFor direction: SwipeDirection) -> UIImageView? {
@@ -83,6 +95,11 @@ class ViewController: UIViewController, PoiViewDataSource, PoiViewDelegate {
     
     @IBAction func undo(_ sender: UIButton) {
         poiView.undo()
+    }
+
+    @IBAction func reload(_ sender: Any) {
+        usesAlternate = !usesAlternate
+        poiView.reloadData()
     }
 }
 

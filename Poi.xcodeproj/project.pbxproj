@@ -102,7 +102,9 @@
 				0782C78020440B0000BACD00 /* Example */,
 				07BEC93520440781008715B6 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		07BEC93520440781008715B6 /* Products */ = {
 			isa = PBXGroup;
