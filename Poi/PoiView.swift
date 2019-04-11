@@ -149,7 +149,7 @@ public class PoiView: UIView {
         if sender.state == UIGestureRecognizer.State.ended {
             if overlay.center.x < 75 {
                 UIView.animate(withDuration: 0.4, animations: {
-                    card.center = CGPoint(x: card.center.x - 300, y: card.center.y)
+                    card.center = CGPoint(x: card.center.x - 400, y: card.center.y)
                 })
                 currentCount += 1
                 delegate?.poi(self, didSwipeCardAt: currentCount, in: .left)
@@ -158,7 +158,7 @@ public class PoiView: UIView {
                 }
             } else if overlay.center.x > (windowView.frame.width - 75) {
                 UIView.animate(withDuration: 0.4, animations: {
-                    card.center = CGPoint(x: card.center.x + 300, y: card.center.y)
+                    card.center = CGPoint(x: card.center.x + 400, y: card.center.y)
                 })
                 currentCount += 1
                 delegate?.poi(self, didSwipeCardAt: currentCount, in: .right)
