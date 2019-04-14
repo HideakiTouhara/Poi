@@ -76,7 +76,7 @@ public class PoiView: UIView {
         UIView.animate(withDuration: 0.4, animations: {
             card.transform = transform
         })
-        swipe(at: direction, by: 600)
+        swipe(at: direction, by: distanceToSendCardAway)
     }
 
     public func undo() {
