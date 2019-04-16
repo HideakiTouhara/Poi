@@ -37,6 +37,7 @@ public class PoiView: UIView {
         let basicView = UIView(frame: bounds)
         basicView.backgroundColor = .clear
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
+        panGesture.delegate = self
         basicView.addGestureRecognizer(panGesture)
         return basicView
     }()
@@ -226,5 +227,20 @@ public class PoiView: UIView {
     private func resetImageAlpha() {
         goodImage?.alpha = 0
         badImage?.alpha = 0
+    }
+}
+
+
+extension PoiView: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
