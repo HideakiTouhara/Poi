@@ -26,9 +26,16 @@ class PoiUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testButtonIsEnabled() {
+        let app = XCUIApplication()
+        var buttons = [XCUIElement]()
+        buttons.append(app.buttons["goodButton"])
+        buttons.append(app.buttons["badButton"])
+        buttons.append(app.buttons["reloadButton"])
+        buttons.append(app.buttons["undoButton"])
+        buttons.forEach { (button) in
+            XCTAssertTrue(button.isEnabled)
+        }
     }
 
 }
