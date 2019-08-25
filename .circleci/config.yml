@@ -27,9 +27,9 @@ jobs:
             SCAN_SCHEME: WebTests
 
 workflows:
+  pull-request:
     jobs:
         build:
-
             # Specify the Xcode version to use
             macos:
             xcode: "8.3.3"
