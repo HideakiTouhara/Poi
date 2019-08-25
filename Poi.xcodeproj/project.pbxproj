@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070E230123127A9600ADF02F /* PoiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E230023127A9600ADF02F /* PoiUITests.swift */; };
 		07602C6E2046B1BF00144890 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07602C6D2046B1BF00144890 /* SwipeDirection.swift */; };
 		0782C77A204409BC00BACD00 /* PoiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782C779204409BC00BACD00 /* PoiView.swift */; };
 		0782C78220440B0000BACD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0782C78120440B0000BACD00 /* AppDelegate.swift */; };
@@ -22,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		070E230323127A9600ADF02F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07BEC92B20440781008715B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0782C77E20440B0000BACD00;
+			remoteInfo = Example;
+		};
 		0782C79320440B1F00BACD00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07BEC92B20440781008715B6 /* Project object */;
@@ -46,6 +54,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		070E22FE23127A9600ADF02F /* PoiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		070E230023127A9600ADF02F /* PoiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiUITests.swift; sourceTree = "<group>"; };
+		070E230223127A9600ADF02F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07602C6D2046B1BF00144890 /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
 		0782C779204409BC00BACD00 /* PoiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiView.swift; sourceTree = "<group>"; };
 		0782C77F20440B0000BACD00 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +74,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		070E22FB23127A9600ADF02F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0782C77C20440B0000BACD00 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		070E22FF23127A9600ADF02F /* PoiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				070E230023127A9600ADF02F /* PoiUITests.swift */,
+				070E230223127A9600ADF02F /* Info.plist */,
+			);
+			path = PoiUITests;
+			sourceTree = "<group>";
+		};
 		0782C78020440B0000BACD00 /* Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +127,7 @@
 			children = (
 				07BEC93620440781008715B6 /* Poi */,
 				0782C78020440B0000BACD00 /* Example */,
+				070E22FF23127A9600ADF02F /* PoiUITests */,
 				07BEC93520440781008715B6 /* Products */,
 			);
 			indentWidth = 4;
@@ -111,6 +139,7 @@
 			children = (
 				07BEC93420440781008715B6 /* Poi.framework */,
 				0782C77F20440B0000BACD00 /* Example.app */,
+				070E22FE23127A9600ADF02F /* PoiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +178,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		070E22FD23127A9600ADF02F /* PoiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 070E230723127A9600ADF02F /* Build configuration list for PBXNativeTarget "PoiUITests" */;
+			buildPhases = (
+				070E22FA23127A9600ADF02F /* Sources */,
+				070E22FB23127A9600ADF02F /* Frameworks */,
+				070E22FC23127A9600ADF02F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				070E230423127A9600ADF02F /* PBXTargetDependency */,
+			);
+			name = PoiUITests;
+			productName = PoiUITests;
+			productReference = 070E22FE23127A9600ADF02F /* PoiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		0782C77E20440B0000BACD00 /* Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0782C78E20440B0000BACD00 /* Build configuration list for PBXNativeTarget "Example" */;
@@ -192,10 +239,15 @@
 		07BEC92B20440781008715B6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = HideakiTouhara;
 				TargetAttributes = {
+					070E22FD23127A9600ADF02F = {
+						CreatedOnToolsVersion = 10.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0782C77E20440B0000BACD00;
+					};
 					0782C77E20440B0000BACD00 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1000;
@@ -223,11 +275,19 @@
 			targets = (
 				07BEC93320440781008715B6 /* Poi */,
 				0782C77E20440B0000BACD00 /* Example */,
+				070E22FD23127A9600ADF02F /* PoiUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		070E22FC23127A9600ADF02F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0782C77D20440B0000BACD00 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,6 +309,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		070E22FA23127A9600ADF02F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				070E230123127A9600ADF02F /* PoiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0782C77B20440B0000BACD00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,6 +339,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		070E230423127A9600ADF02F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0782C77E20440B0000BACD00 /* Example */;
+			targetProxy = 070E230323127A9600ADF02F /* PBXContainerItemProxy */;
+		};
 		0782C79420440B1F00BACD00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 07BEC93320440781008715B6 /* Poi */;
@@ -298,6 +371,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		070E230523127A9600ADF02F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QG4UUMT2SM;
+				INFOPLIST_FILE = PoiUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-HideakiTouhara.PoiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Example;
+			};
+			name = Debug;
+		};
+		070E230623127A9600ADF02F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QG4UUMT2SM;
+				INFOPLIST_FILE = PoiUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-HideakiTouhara.PoiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Example;
+			};
+			name = Release;
+		};
 		0782C78F20440B0000BACD00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -495,6 +605,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		070E230723127A9600ADF02F /* Build configuration list for PBXNativeTarget "PoiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				070E230523127A9600ADF02F /* Debug */,
+				070E230623127A9600ADF02F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0782C78E20440B0000BACD00 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
