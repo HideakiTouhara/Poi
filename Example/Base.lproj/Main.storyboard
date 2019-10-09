@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,37 +24,49 @@
                                     <constraint firstAttribute="width" constant="268" id="ZRz-BD-eGn"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Vr-NzQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxo-Vr-NzQ">
                                 <rect key="frame" x="275" y="42" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="undoButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Tg2-KC-ONg"/>
+                                    <constraint firstAttribute="height" constant="30" id="miL-Ux-9c1"/>
+                                </constraints>
                                 <state key="normal" title="Undo"/>
                                 <connections>
                                     <action selector="undo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RHt-VN-wzd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whx-y8-3Rg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whx-y8-3Rg">
                                 <rect key="frame" x="73" y="562" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="badButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0qU-wS-QKG"/>
+                                    <constraint firstAttribute="width" constant="30" id="9at-8g-ciK"/>
+                                </constraints>
                                 <state key="normal" title="Bad"/>
                                 <connections>
                                     <action selector="cancelAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f5o-tg-kX4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Su-5g-DGn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Su-5g-DGn">
                                 <rect key="frame" x="239" y="562" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="goodButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eQ3-hL-EwY"/>
+                                    <constraint firstAttribute="width" constant="46" id="zlc-qg-waB"/>
+                                </constraints>
                                 <state key="normal" title="Good"/>
                                 <connections>
                                     <action selector="OKAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bhF-II-8q3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-S7-QEU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-S7-QEU">
                                 <rect key="frame" x="57" y="42" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="reloadButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="3Rk-Wp-xcd"/>
+                                    <constraint firstAttribute="height" constant="30" id="XBW-ch-4oc"/>
+                                </constraints>
                                 <state key="normal" title="Reload"/>
                                 <connections>
                                     <action selector="reload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yb4-RF-avZ"/>
@@ -65,8 +75,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="whx-y8-3Rg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="57j-OH-cpw"/>
+                            <constraint firstItem="MZY-S7-QEU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="AGF-hb-P7e"/>
                             <constraint firstItem="5vJ-dX-VBD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DaZ-nZ-U66"/>
+                            <constraint firstItem="sxo-Vr-NzQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="FCN-oG-Nhg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="whx-y8-3Rg" secondAttribute="bottom" constant="75" id="Jlt-8A-f2c"/>
                             <constraint firstItem="5vJ-dX-VBD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JsF-gT-nhw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Su-5g-DGn" secondAttribute="trailing" constant="90" id="LbF-Hz-J8X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Su-5g-DGn" secondAttribute="bottom" constant="75" id="LfX-HW-cKO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sxo-Vr-NzQ" secondAttribute="trailing" constant="54" id="h54-Q0-R8y"/>
+                            <constraint firstItem="MZY-S7-QEU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="t43-19-MVe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
