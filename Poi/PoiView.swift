@@ -27,7 +27,7 @@ public extension PoiViewDataSource {
 
 public class PoiView: UIView {
     
-    public var distanceToSendCardAway: CGFloat = 400
+    public var distanceToSendCardAway: CGFloat = UIScreen.main.bounds.width
     
     private var contentViews = [UIView]()
 
